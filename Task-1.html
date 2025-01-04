@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <style>
+    /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Header Styling */
+header {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+/* Main content */
+main {
+    text-align: center;
+}
+
+/* Buttons styling */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Simple Webpage</h1>
+    </header>
+    <main>
+        <p>This is a simple webpage with HTML, CSS, and JavaScript.</p>
+        
+        <button id="colorButton">Change Background Color</button>
+        <button id="toggleTextButton">Toggle Text Visibility</button>
+        
+        <div id="extraText" style="display:none;">
+            <p>This text is hidden initially. Click the button to toggle visibility.</p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Simple Webpage. All rights reserved.</p>
+    </footer>
+    
+    <script>
+    // JavaScript to add interactivity
+document.getElementById('colorButton').addEventListener('click', function() {
+    // Change background color when clicked
+    document.body.style.backgroundColor = getRandomColor();
+});
+
+document.getElementById('toggleTextButton').addEventListener('click', function() {
+    // Toggle the visibility of the extra text
+    const extraText = document.getElementById('extraText');
+    if (extraText.style.display === 'none') {
+        extraText.style.display = 'block';
+    } else {
+        extraText.style.display = 'none';
+    }
+});
+
+// Function to generate a random color
+function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+    </script>
+</body>
+</html>
